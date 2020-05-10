@@ -1,13 +1,12 @@
 function createLibrary(name) {
-  var library = {}; 
-  library = {
+  var library = {
     name: name, 
     shelves: {
       fantasy: [],
       fiction: [],
       nonFiction: [],
-    }
-  };
+    } 
+  }
   //console.log(library.shelves)
   return library
 }
@@ -17,7 +16,7 @@ function addBook(library, book) {
   library.shelves[`${bookGenre}`].push(book);
    // console.log("a1:", book.genre, "a2:", typeof(book.Genre), 'a3:', library.shelves[`${bookGenre}`])
     // console.log("A", library.shelves);
-   //return "z", library
+   return library
 }
 
 function checkoutBook(library, title) {
@@ -36,7 +35,7 @@ function checkoutBook(library, title) {
         console.log(index);
     index !== -1 ? shelfGenres[i].splice(index, 1) : shelfGenres[i];
   }
-    console.log(shelfGenres);
+      console.log(shelfGenres);
     return index !== -1 ? 
     `You have now checked out ${title} from the ${library.name}` : `Sorry, there are currently no copies of ${title} available at the ${library.name}`
 }
@@ -54,6 +53,29 @@ function checkoutBook(library, title) {
 //   }), 1);
 // }
 
+function checkoutBook(library, title) {
+  var shelfGenres = [
+    library.shelves.fantasy,
+    library.shelves.nonFiction, 
+    library.shelves.fiction,
+  ];
+      console.log("1:", library.shelves['1'])
+  var index;
+  for (var i = 0; i < 3; i++) {
+
+  }
+    for (var i = 0; i < shelfGenres.length; i++) {
+          //console.log("2:", shelfGenres[i]);   
+      index = shelfGenres[i].findIndex(function(book) {
+        return book.title === title
+      })
+          console.log(index);
+      index !== -1 ? shelfGenres[i].splice(index, 1) : shelfGenres[i];
+    }
+        console.log(shelfGenres);
+      return index !== -1 ? 
+      `You have now checked out ${title} from the ${library.name}` : `Sorry, there are currently no copies of ${title} available at the ${library.name}`
+}
 module.exports = {
   createLibrary: createLibrary,
   addBook: addBook,

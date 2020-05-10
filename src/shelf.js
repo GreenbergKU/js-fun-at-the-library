@@ -23,19 +23,17 @@ function listTitles(shelf) {
   return `${shelf[0].title}, ${shelf[1].title}, ${shelf[2].title}`
 }
  
-function searchShelf(shelf, book) {
+function searchShelf(shelf, title) {
   for (i = 0; i < shelf.length; i++) {
-    shelf[i].title === book 
-      return true;
-    
-  } return false;
+    var bookFound = (shelf[i].title === title)
+  } return bookFound
 }
 
   module.exports = {
   shelfBook: shelfBook,
   unshelfBook: unshelfBook,
   listTitles: listTitles,
-  searchShelf: searchShelf
+  searchShelf: searchShelf,
 };
 
 

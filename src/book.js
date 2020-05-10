@@ -4,11 +4,12 @@ function createTitle(title) {
 }
 
 function buildMainCharacter(name, age, pronouns) {
-  return {
+  var mainCharacter = {
     name: name, 
     age: age, 
     pronouns: pronouns,
   }
+  return mainCharacter
 }
 
 function saveReview(review, reviews) {
