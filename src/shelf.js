@@ -9,12 +9,16 @@ function unshelfBook(title, shelf) {
 }
 
 function listTitles(shelf) {
-  return `${shelf[0].title}, ${shelf[1].title}, ${shelf[2].title}`
-}
+  var titleList = [];
+  for (var i = 0; i < shelf.length; i++) {
+    titleList.push(shelf[i].title);
+  }
+  return titleList.join(', ');
+}  
  
 function searchShelf(shelf, title) {
   for (i = 0; i < shelf.length; i++) {
-    var bookFound = (shelf[i].title === title)
+    var bookFound = (shelf[i].title === title);
   } return bookFound
 }
 
