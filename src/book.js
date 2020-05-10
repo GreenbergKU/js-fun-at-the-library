@@ -16,12 +16,11 @@ function saveReview(review, reviews) {
 }
 
 function calculatePageCount(title) {
-      console.log("A", title.length, "B", 340/20, "C", title.length*20);
   return title.length*20;
 }
  
 function writeBook(title, mainCharacter, genre) {
-  book = {
+  var book = {
     title: title, 
     mainCharacter: mainCharacter,
     genre: genre,
@@ -30,7 +29,7 @@ function writeBook(title, mainCharacter, genre) {
   return book;
 }
 
-function editBook() {   
+function editBook(book) {   
   return book.pageCount = book.pageCount*.75;
 }
 
