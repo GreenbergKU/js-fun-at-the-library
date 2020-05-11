@@ -22,14 +22,14 @@ function checkoutBook(library, title) {
     library.shelves.nonFiction, 
     library.shelves.fiction,
   ];
-  var index;
+  var bookIndex;
   for (var i = 0; i < shelfGenres.length; i++) {
-    index = shelfGenres[i].findIndex(function(book) {
+    bookIndex = shelfGenres[i].findIndex(function(book) {
       return book.title === title
     }),
-    index !== -1 ? shelfGenres[i].splice(index, 1) : shelfGenres[i];
+    bookIndex !== -1 ? shelfGenres[i].splice(index, 1) : shelfGenres[i];
   };
-  return index !== -1 ? 
+  return bookIndex !== -1 ? 
     `You have now checked out ${title} from the ${library.name}`: 
     `Sorry, there are currently no copies of ${title} available at the ${library.name}`
 }
