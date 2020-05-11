@@ -27,7 +27,7 @@ function checkoutBook(library, title) {
     bookIndex = shelfGenres[i].findIndex(function(book) {
       return book.title === title
     }),
-    bookIndex !== -1 ? shelfGenres[i].splice(index, 1) : shelfGenres[i];
+    bookIndex !== -1 ? shelfGenres[i].splice(bookIndex, 1) : shelfGenres[i];
   };
   return bookIndex !== -1 ? 
     `You have now checked out ${title} from the ${library.name}`: 
