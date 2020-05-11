@@ -30,6 +30,3 @@ function searchShelf(shelf, title) {
   searchShelf: searchShelf,
 };
 
-
-// //  #2
-// //  test test/shelf-test.js

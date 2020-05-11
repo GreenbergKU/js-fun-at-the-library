@@ -78,8 +78,6 @@ describe('Librarian (class)', function() {
     assert.equal(bookConfirmation, "Sorry, we do not have Five Brief Lessons in Physics");
   });
 
-  
-
   it('should checkout the book if found', function() {
     var library = createLibrary("Aurora Public Library");
     var librarian = new Librarian("Casey", library);

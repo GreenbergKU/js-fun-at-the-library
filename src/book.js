@@ -33,7 +33,6 @@ function editBook(book) {
   return book.pageCount = book.pageCount*.75;
 }
 
-
 module.exports = {
   createTitle: createTitle,
   buildMainCharacter: buildMainCharacter,
@@ -43,7 +42,5 @@ module.exports = {
   editBook: editBook,
 }
 
-// //  #1
-// //  npm test test/book-test.js
 
 
