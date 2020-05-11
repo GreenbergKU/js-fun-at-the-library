@@ -1,5 +1,5 @@
 function createTitle(title) {
-  return 'The ' + title;
+  return 'The ' + title
 }
 
 function buildMainCharacter(name, age, pronouns) {
@@ -16,7 +16,7 @@ function saveReview(review, reviews) {
 }
 
 function calculatePageCount(title) {
-  return title.length*20;
+  return title.length*20
 }
  
 function writeBook(title, mainCharacter, genre) {
@@ -24,9 +24,9 @@ function writeBook(title, mainCharacter, genre) {
     title: title, 
     mainCharacter: mainCharacter,
     genre: genre,
-  };  
+  };
   book.pageCount = calculatePageCount(title);
-  return book;
+  return book
 }
 
 function editBook(book) {   

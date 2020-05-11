@@ -23,22 +23,14 @@ function checkoutBook(library, title) {
     library.shelves.fiction,
   ];
   for (var i = 0; i < shelfGenres.length; i++) {
-    x = shelfGenres[i].findIndex(function(book) { 
-      return book.title === title
-    }),
-    shelfGenres[i].splice(x, x !== -1 ? 1 : 0)
+    shelfGenres[i].splice(x, (x = shelfGenres[i].findIndex(function(book) {  
+        return book.title === title
+    })) !== -1 ? 1 : 0)  
   };
-  return x !== -1 ? `You have now checked out ${title} from the ${library.name}` : `Sorry, there are currently no copies of ${title} available at the ${library.name}`
-}
-
-//   for (var i = 0; i < shelfGenres.length; i++) {
-//     shelfGenres[i].splice(x, 
-//       (x = shelfGenres[i].findIndex(function(book) { 
-//       return book.title === title
-//     })) !== -1 ? 1 : 0)  
-//   };
-  //return x !== -1 ? `You have now checked out ${title} from the ${library.name}` : `Sorry, there are currently no copies of ${title} available at the ${library.name}`
-// } 
+  return x !== -1 ? 
+    `You have now checked out ${title} from the ${library.name}`: 
+    `Sorry, there are currently no copies of ${title} available at the ${library.  name}`
+} 
 
 module.exports = {
   createLibrary: createLibrary,
