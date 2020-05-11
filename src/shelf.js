@@ -13,20 +13,20 @@ function listTitles(shelf) {
   for (var i = 0; i < shelf.length; i++) {
     titleList.push(shelf[i].title);
   };
-  return titleList.join(', ');
+  return titleList.join(', ')
 }  
  
 function searchShelf(shelf, title) {
+  var bookFound;
   for (i = 0; i < shelf.length; i++) {
-    var bookFound = (shelf[i].title === title);
-  }; 
+    bookFound = shelf[i].title === title
+  };
   return bookFound
 }
 
-  module.exports = {
+module.exports = {
   shelfBook: shelfBook,
   unshelfBook: unshelfBook,
   listTitles: listTitles,
   searchShelf: searchShelf,
 };
-
