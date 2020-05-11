@@ -17,20 +17,22 @@ function addBook(library, book) {
 }
 
 function checkoutBook(library, title) {
-  var bookIndex, shelfGenres = [
+  var shelfGenres = [
     library.shelves.fantasy,
     library.shelves.nonFiction, 
     library.shelves.fiction,
   ];
+  var index;
   for (var i = 0; i < shelfGenres.length; i++) {
-    shelfGenres[i].splice(bookIndex, (bookIndex = shelfGenres[i].findIndex(function(book) {  
+    index = shelfGenres[i].findIndex(function(book) {
       return book.title === title
-    })) !== -1 ? 1:0)  
+    }),
+    index !== -1 ? shelfGenres[i].splice(index, 1) : shelfGenres[i];
   };
-  return bookIndex !== -1 ? 
+  return index !== -1 ? 
     `You have now checked out ${title} from the ${library.name}`: 
-    `Sorry, there are currently no copies of ${title} available at the ${library.  name}`
-} 
+    `Sorry, there are currently no copies of ${title} available at the ${library.name}`
+}
 
 module.exports = {
   createLibrary: createLibrary,
