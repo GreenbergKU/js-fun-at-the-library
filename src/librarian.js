@@ -5,7 +5,7 @@ class Librarian {
     this.morning = morning ? true:false;
   }
 
-  greetPatron(name, morning){
+  greetPatron(name, morning) {
     return morning ? `Good morning, ${name}!`:`Hello, ${name}!`;
   }
 
@@ -19,9 +19,7 @@ class Librarian {
   }
   
   calculateLateFee(daysPastDue) {
-    var pastDue = daysPastDue * .25;
-    var pastDueRounded = Math.ceil(pastDue);
-    return pastDueRounded;
+    return Math.ceil(daysPastDue * .25)
   };
 }
 
