@@ -21,12 +21,12 @@ class Librarian {
   //   return `Sorry, we do not have ${title}`
   // }
   findBook(title) {
-    console.log("A", "B", checkoutBook(this.library, title));
+    //console.log("A", checkoutBook(this.library, title).length, "B",  `Sorry, there are currently no copies of ${title} available at the ${this.library.name}`.length);
     ///if (searchShelf(this.shelf, title) == false ) {
       //
 
-      if (checkoutBook(this.library, title) == 
-        `Sorry, there are currently no copies of ${title} available at the ${this.library}`) {
+      if (checkoutBook(this.library, title).length === 
+        `Sorry, there are currently no copies of ${title} available at the ${this.library.name}`.length) {
           return `Sorry, we do not have ${title}`
         } else {
         return `Yes, we have ${title}` 

@@ -28,10 +28,17 @@ function checkoutBook(library, title) {
       return book.title === title
     }),
     bookIndex !== -1 ? shelfGenres[i].splice(bookIndex, 1) : shelfGenres[i];
+    if (bookIndex !== -1) {
+      return `You have now checked out ${title} from the ${library.name}`
+    }
+      //if found, return 'found statement...'
   };
-  return bookIndex !== -1 ? 
-    `You have now checked out ${title} from the ${library.name}`: 
-    `Sorry, there are currently no copies of ${title} available at the ${library.name}`
+  console.log("1", bookIndex)
+  return  `Sorry, there are currently no copies of ${title} available at the ${library.name}`
+  //bookIndex !== -1 ? 
+  // return 'not found' (no conditional neeeded)
+  //  : 
+  
 }
 
 module.exports = {
